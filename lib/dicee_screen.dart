@@ -36,7 +36,13 @@ class _DiceeScreenState extends State<DiceeScreen> {
         ),
       ),
       backgroundColor: Colors.red,
-      body: Row(children: [Image.asset(width: 1000, "images/dicee1.png")]),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(child: Image.asset('images/dice1.png')),
+          Expanded(child: Image.asset('images/dice2.png')),
+        ],
+      ),
     );
   }
 }
