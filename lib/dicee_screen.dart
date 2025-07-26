@@ -36,12 +36,24 @@ class _DiceeScreenState extends State<DiceeScreen> {
         ),
       ),
       backgroundColor: Colors.red,
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(child: Image.asset('images/dice1.png')),
-          Expanded(child: Image.asset('images/dice2.png')),
-        ],
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset("images/dice1.png"),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset("images/dice1.png"),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
