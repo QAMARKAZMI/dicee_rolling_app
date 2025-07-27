@@ -8,9 +8,10 @@ class DiceeScreen extends StatefulWidget {
 }
 
 class _DiceeScreenState extends State<DiceeScreen> {
+  int LeftDiceNumber = 1; // class-level variable
+
   @override
   Widget build(BuildContext context) {
-    var LeftDiceNumber = 5;
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -44,7 +45,10 @@ class _DiceeScreenState extends State<DiceeScreen> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  print("Left dice pressed");
+                  setState(() {
+                    LeftDiceNumber = 6;
+                    print("Dice Number $LeftDiceNumber pressed");
+                  });
                 },
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
@@ -56,7 +60,7 @@ class _DiceeScreenState extends State<DiceeScreen> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  print(" Right dice pressed");
+                  print("Right dice pressed");
                 },
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
