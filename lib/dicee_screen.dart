@@ -22,12 +22,12 @@ class _DiceeScreenState extends State<DiceeScreen> {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1.0),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 1.0,
-                  offset: Offset(10, 20),
+                  offset: Offset(0, 1),
                 ),
               ],
             ),
@@ -41,15 +41,27 @@ class _DiceeScreenState extends State<DiceeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset("images/dice1.png"),
+              child: TextButton(
+                onPressed: () {
+                  print("Left dice pressed");
+                },
+                style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Image.asset("images/dice1.png"),
+                ),
               ),
             ),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset("images/dice1.png"),
+              child: TextButton(
+                onPressed: () {
+                  print(" Right dice pressed");
+                },
+                style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Image.asset("images/dice1.png"),
+                ),
               ),
             ),
           ],
