@@ -10,6 +10,7 @@ class DiceeScreen extends StatefulWidget {
 class _DiceeScreenState extends State<DiceeScreen> {
   @override
   Widget build(BuildContext context) {
+    var LeftDiceNumber = 5;
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -48,7 +49,7 @@ class _DiceeScreenState extends State<DiceeScreen> {
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Image.asset("images/dice1.png"),
+                  child: Image.asset("images/dice$LeftDiceNumber.png"),
                 ),
               ),
             ),
