@@ -13,6 +13,14 @@ class _DiceeScreenState extends State<DiceeScreen> {
   int LeftDiceNumber = 1; // class-level variable
   int RightDiceNumber = 1; // class-level variable
 
+  void changeDiceFace() {
+    setState(() {
+      LeftDiceNumber = Random().nextInt(6) + 1;
+      RightDiceNumber = Random().nextInt(6) + 1;
+      print("Dice Number $LeftDiceNumber pressed");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,10 +56,7 @@ class _DiceeScreenState extends State<DiceeScreen> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  setState(() {
-                    LeftDiceNumber = Random().nextInt(6) + 1;
-                    print("Dice Number $LeftDiceNumber pressed");
-                  });
+                  changeDiceFace();
                 },
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
@@ -63,10 +68,7 @@ class _DiceeScreenState extends State<DiceeScreen> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  setState(() {
-                    RightDiceNumber = Random().nextInt(6) + 1;
-                    print("Dice Number $RightDiceNumber pressed");
-                  });
+                  changeDiceFace();
                 },
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
