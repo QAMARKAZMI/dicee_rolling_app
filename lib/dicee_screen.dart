@@ -11,6 +11,7 @@ class DiceeScreen extends StatefulWidget {
 
 class _DiceeScreenState extends State<DiceeScreen> {
   int LeftDiceNumber = 1; // class-level variable
+  int RightDiceNumber = 1; // class-level variable
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +63,15 @@ class _DiceeScreenState extends State<DiceeScreen> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  print("Right dice pressed");
+                  setState(() {
+                    RightDiceNumber = Random().nextInt(6) + 1;
+                    print("Dice Number $RightDiceNumber pressed");
+                  });
                 },
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Image.asset("images/dice1.png"),
+                  child: Image.asset("images/dice$RightDiceNumber.png"),
                 ),
               ),
             ),
