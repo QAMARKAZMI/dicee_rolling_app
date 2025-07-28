@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DiceeScreen extends StatefulWidget {
@@ -46,7 +48,7 @@ class _DiceeScreenState extends State<DiceeScreen> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    LeftDiceNumber = 6;
+                    LeftDiceNumber = Random().nextInt(6) + 1;
                     print("Dice Number $LeftDiceNumber pressed");
                   });
                 },
